@@ -1,10 +1,10 @@
 # Autocomplete API
 
-A Go-based REST API that provides country name autocomplete functionality. The API uses a Trie data structure for efficient prefix-based searching and matching.
+A Go-based REST API that provides intelligent autocomplete functionality for various categories including countries, cities, universities, companies, job titles, and skills. The API uses a Trie data structure for efficient prefix-based searching and matching.
 
 ## Features
 
-- Fast autocomplete suggestions for country names
+- Fast autocomplete suggestions for multiple categories
 - Case-insensitive searching
 - RESTful API endpoints
 - Built with Echo framework
@@ -13,7 +13,38 @@ A Go-based REST API that provides country name autocomplete functionality. The A
 ## API Endpoints
 
 - `GET /` - Welcome message
-- `GET /countries?q={query}` - Get country suggestions based on the query parameter
+- `GET /countries?q={query}` - Get country name suggestions
+- `GET /cities?q={query}` - Get city name suggestions
+- `GET /universities?q={query}` - Get university name suggestions
+- `GET /companies?q={query}` - Get company name suggestions
+- `GET /job-titles?q={query}` - Get job title suggestions
+- `GET /skills?q={query}` - Get skill suggestions
+
+All endpoints support the following:
+- Case-insensitive searching
+- Partial matching
+- Returns all items when query parameter is empty
+- Returns matching items sorted by relevance when query is provided
+
+Example usage:
+# Get countries containing "United"
+GET http://localhost:1323/countries?q=United
+
+# Get cities starting with "San"
+GET http://localhost:1323/cities?q=San
+
+# Get universities containing "University of"
+GET http://localhost:1323/universities?q=University of
+
+# Get companies containing "Inc"
+GET http://localhost:1323/companies?q=Inc
+
+# Get job titles containing "Engineer"
+GET http://localhost:1323/job-titles?q=Engineer
+
+# Get skills containing "Python"
+GET http://localhost:1323/skills?q=Python
+```
 
 ## Requirements
 
