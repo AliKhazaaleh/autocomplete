@@ -1,6 +1,6 @@
 # Autocomplete API
 
-A Go-based REST API that provides intelligent autocomplete functionality for various categories including countries, cities, universities, companies, job titles, and skills. The API uses a Trie data structure for efficient prefix-based searching and matching.
+A Go-based REST API that provides intelligent autocomplete functionality for various categories including countries, cities, universities, companies, job titles, and skills. The API uses a Trie data structure for efficient search.
 
 ## Features
 
@@ -44,7 +44,6 @@ GET http://localhost:1323/job-titles?q=Engineer
 
 # Get skills containing "Python"
 GET http://localhost:1323/skills?q=Python
-```
 
 ## Requirements
 
@@ -54,7 +53,7 @@ GET http://localhost:1323/skills?q=Python
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/autocomplete.git
+git clone https://github.com/AliKhazaaleh/autocomplete.git
 cd autocomplete
 ```
 
