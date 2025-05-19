@@ -13,7 +13,7 @@ func init() {
 	countryTrie = trie.Build(countryList)
 }
 
-func GetCountrySuggestions(c echo.Context) error {
+func ActionCountries(c echo.Context) error {
 	query := c.QueryParam("q")
 	if query == "" {
 		return c.JSON(http.StatusOK, countryList)

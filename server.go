@@ -13,8 +13,17 @@ func main() {
 		return c.String(http.StatusOK, "Welcome to the Echo server!")
 	})
 
-	// Countries routes
-	e.GET("/countries", controllers.GetCountrySuggestions)
+	e.GET("/countries", controllers.ActionCountries)
+	e.GET("/cities", controllers.ActionCities)
+
+	e.GET("/universities", controllers.ActionUniversities)
+	e.GET("/companies", controllers.ActionCompanies)
+
+	e.GET("/job-titles", controllers.ActionJobTitles)
+	e.GET("/skills", controllers.ActionSkills)
+
+	// e.GET("/studies", controllers.ActionStudies)
+	// e.GET("/certificates", controllers.ActionCertificates)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
