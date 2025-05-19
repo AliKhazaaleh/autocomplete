@@ -70,16 +70,6 @@ go run server.go
 
 The server will start on port 1323.
 
-## Usage
-
-To get country suggestions, send a GET request to `/countries` with a query parameter:
-
-```
-http://localhost:1323/countries?q=aus
-```
-
-This will return matches like "Australia", "Austria", etc.
-
 ## Project Structure
 
 - `server.go` - Main application entry point
