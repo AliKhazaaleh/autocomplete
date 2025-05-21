@@ -3,7 +3,6 @@ package main
 import (
 	"autocomplete/controllers"
 	"fmt"
-	"net/http"
 
 	"github.com/labstack/echo/v4"
 )
@@ -19,7 +18,7 @@ func main() {
 func registerRoutes(e *echo.Echo) {
 
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Welcome to the Echo server!")
+		return c.File("static/index.html")
 	})
 
 	e.GET("/countries", controllers.ActionCountries)

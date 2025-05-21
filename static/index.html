@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .endpoint {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        code {
+            background: #e0e0e0;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Autocomplete API</h1>
+    
+    <p>Welcome to the Autocomplete API. This service provides intelligent autocomplete suggestions for various categories.</p>
+
+    <h2>Available Endpoints</h2>
+
+    <div class="endpoint">
+        <h3>Countries</h3>
+        <p><code>GET /countries?q=united&limit=10</code></p>
+        <p>Get country suggestions (200+ countries)</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Cities</h3>
+        <p><code>GET /cities?q=new&limit=20</code></p>
+        <p>Get city suggestions (74000+ cities)</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Universities</h3>
+        <p><code>GET /universities?q=university&limit=5</code></p>
+        <p>Get university suggestions (0+ universities)</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Companies</h3>
+        <p><code>GET /companies?q=tech&limit=10</code></p>
+        <p>Get company suggestions (0+ companies)</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Job Titles</h3>
+        <p><code>GET /job-titles?q=engineer&limit=10</code></p>
+        <p>Get job title suggestions (850+ job titles)</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Skills</h3>
+        <p><code>GET /skills?q=java&limit=10</code></p>
+        <p>Get skill suggestions (87000+ skills)</p>
+    </div>
+
+    <h2>Query Parameters</h2>
+    <ul>
+        <li><code>q</code>: Search query string (optional)</li>
+        <li><code>limit</code>: Maximum number of results (optional, default: 20, max: 20)</li>
+    </ul>
+
+    <footer>
+        <p>Built with Go and Echo framework</p>
+    </footer>
+</body>
+</html>
