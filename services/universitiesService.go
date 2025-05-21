@@ -23,14 +23,17 @@ func buildUniversityTrie() {
 	}
 }
 
-func GetAutoCompleteUniversities(query string) []string {
-	if query == "" {
+func GetAutoCompleteUniversities(query string, limit int) []string {
+	if query == "" || limit <= 0 {
 		return []string{}
 	}
 
 	resultIds := UniversityTrie.Search(query)
-	results := make([]string, 0, len(resultIds))
-	for _, id := range resultIds {
+	results := make([]string, 0, limit)
+	for i, id := range resultIds {
+		if i >= limit {
+			break
+		}
 		results = append(results, universities[id])
 	}
 

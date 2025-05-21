@@ -7,7 +7,7 @@ import (
 
 type trieNode struct {
 	id       int
-	word     string // Store the word at the end node
+	word     string
 	children map[rune]*trieNode
 	isEnd    bool
 }
@@ -24,7 +24,6 @@ func NewTrie() *Trie {
 	}
 }
 
-// Insert adds a word with its associated id to the trie.
 func (t *Trie) Insert(id int, word string) {
 	node := t.root
 	lcWord := strings.ToLower(word)
@@ -38,11 +37,9 @@ func (t *Trie) Insert(id int, word string) {
 	}
 	node.isEnd = true
 	node.id = id
-	node.word = lcWord // Store the word in the end node
+	node.word = lcWord
 }
 
-// Search returns the ids of all words in the trie that contain the query string.
-// The ids are sorted by the position of the match (begin, mid, tail).
 func (t *Trie) Search(query string) []int {
 	if query == "" {
 		return nil

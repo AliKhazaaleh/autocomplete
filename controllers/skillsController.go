@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"autocomplete/pkg/utils"
 	"autocomplete/services"
 	"net/http"
 
@@ -9,5 +10,6 @@ import (
 
 func ActionSkills(c echo.Context) error {
 	query := c.QueryParam("q")
-	return c.JSON(http.StatusOK, services.GetAutoCompleteSkills(query))
+	limit := utils.ParseLimit(c.QueryParam("limit"), 20, 20)
+	return c.JSON(http.StatusOK, services.GetAutoCompleteSkills(query, limit))
 }

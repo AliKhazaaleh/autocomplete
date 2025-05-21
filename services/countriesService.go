@@ -23,14 +23,17 @@ func buildCountryTrie() {
 	}
 }
 
-func GetAutoCompleteCountries(query string) []string {
-	if query == "" {
-		return data.CountryList
+func GetAutoCompleteCountries(query string, limit int) []string {
+	if query == "" || limit <= 0 {
+		return []string{}
 	}
 
 	resultIds := CountryTrie.Search(query)
-	results := make([]string, 0, len(resultIds))
-	for _, id := range resultIds {
+	results := make([]string, 0, limit)
+	for i, id := range resultIds {
+		if i >= limit {
+			break
+		}
 		results = append(results, countries[id])
 	}
 
