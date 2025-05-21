@@ -14,7 +14,7 @@ A Go-based REST API that provides intelligent autocomplete functionality for var
 ## API Endpoints
 
 All endpoints support the following query parameters:
-- `q`: Search query string (optional)
+- `q`: Search query string
   - Case-insensitive matching
   - Partial string matching
 - `limit`: Maximum number of results (optional)
