@@ -28,8 +28,8 @@ func registerRoutes(e *echo.Echo) {
 	e.GET("/universities", controllers.ActionUniversities)
 	e.GET("/companies", controllers.ActionCompanies)
 
-	// e.GET("/job-titles", controllers.ActionJobTitles)
-	// e.GET("/skills", controllers.ActionSkills)
+	e.GET("/job-titles", controllers.ActionJobTitles)
+	e.GET("/skills", controllers.ActionSkills)
 
 	// e.GET("/studies", controllers.ActionStudies)
 	// e.GET("/certificates", controllers.ActionCertificates)
