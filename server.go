@@ -25,8 +25,8 @@ func registerRoutes(e *echo.Echo) {
 	e.GET("/countries", controllers.ActionCountries)
 	e.GET("/cities", controllers.ActionCities)
 
-	// e.GET("/universities", controllers.ActionUniversities)
-	// e.GET("/companies", controllers.ActionCompanies)
+	e.GET("/universities", controllers.ActionUniversities)
+	e.GET("/companies", controllers.ActionCompanies)
 
 	// e.GET("/job-titles", controllers.ActionJobTitles)
 	// e.GET("/skills", controllers.ActionSkills)
